@@ -10,5 +10,7 @@
 - [X]  Create Routes
 - [ ]  Create Auth/Login Routes for Admin
 
-## TO FIX
-[] Model: Find a better name for body contact massage.
+## 
+
+[] I need to write down the packages that I have used for all the process in the backend. 
+
