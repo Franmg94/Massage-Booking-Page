@@ -1,11 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
+import HomePage from './pages/HomePage';
+import BookingPage from './pages/BookingPage';
 
-function App() {
-  return (
-    <div className="App">
-    
-    </div>
+const App: React.FC = () => {
+  return(
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/booking" element={<BookingPage />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;

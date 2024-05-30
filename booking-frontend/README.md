@@ -1,3 +1,19 @@
+### NOTES FROM DEVELOPMENT
+[] Create the React project
+[] Install dependencies like axios and tailwind
+[] Design the main layour with the header
+[] Design booking form
+[] Display existing appointments
+[] Connect frontend and backend
+[] Style the application
+[] Test and refine
+
+## PROCESS
+[] Trying to debug the problems, two of them are the appointments list and form
+
+
+---------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
