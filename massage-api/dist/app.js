@@ -10,6 +10,8 @@ require("../src/db/index");
 // Handles HTTP requests (express is node js framework)
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = require("body-parser");
+const auth_routes_1 = __importDefault(require("./routes/auth.routes"));
+const appointments_routes_1 = __importDefault(require("./routes/appointments.routes"));
 const app = (0, express_1.default)();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 const index_1 = __importDefault(require("./config/index"));
@@ -17,11 +19,9 @@ const index_1 = __importDefault(require("./config/index"));
 // 👇 Apply body-parser middleware
 app.use((0, body_parser_1.json)());
 // 👇 Start handling routes here
-const index_2 = __importDefault(require("../src/routes/index"));
-const appointments_1 = __importDefault(require("./routes/appointments"));
-app.use('/api', index_2.default);
-app.use('/appointments', appointments_1.default);
+app.use('/api/auth', auth_routes_1.default);
+app.use('/appointments', appointments_routes_1.default);
 // Error handling middleware
-const index_3 = __importDefault(require("./error-handling/index"));
-(0, index_3.default)(app);
+const index_2 = __importDefault(require("./error-handling/index"));
+(0, index_2.default)(app);
 exports.default = app;

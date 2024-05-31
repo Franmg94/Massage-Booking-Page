@@ -8,6 +8,9 @@ import "../src/db/index";
 import express from 'express';
 import { json } from 'body-parser';
 
+import authRoutes from './routes/auth.routes';
+import appointmentRoutes from './routes/appointments.routes';
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
@@ -18,10 +21,7 @@ config(app);
 app.use(json());
 
 // 👇 Start handling routes here
-import indexRoute from '../src/routes/index';
-import appointmentRoutes from './routes/appointments';
-
-app.use('/api', indexRoute);
+app.use('/auth', authRoutes);
 app.use('/appointments', appointmentRoutes);
 
 // Error handling middleware
