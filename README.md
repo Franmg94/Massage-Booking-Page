@@ -1,5 +1,5 @@
 ### TASKS
-
+[] I need to write down the packages that I have used for all the process in the backend. 
 
 # PRESENT PROCESS w/ BACKEND
 
@@ -10,7 +10,8 @@
 - [X]  Create Routes
 - [ ]  Create Auth/Login Routes for Admin
 
-## 
+## FIXING
+[] Now I can't connect the DB...
 
-[] I need to write down the packages that I have used for all the process in the backend. 
+
 
