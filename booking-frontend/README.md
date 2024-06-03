@@ -1,10 +1,10 @@
 ### NOTES FROM DEVELOPMENT
-[] Create the React project
-[] Install dependencies like axios and tailwind
+[x] Create the React project
+[x] Install dependencies like axios and tailwind
 [] Design the main layour with the header
 [] Design booking form
 [] Display existing appointments
-[] Connect frontend and backend
+[x] Connect frontend and backend
 [] Style the application
 [] Test and refine
 
