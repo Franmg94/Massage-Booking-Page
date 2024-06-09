@@ -1,10 +1,10 @@
 import React from "react";
+import HeroBooking from "../components/homepage/HeroBooking";
+
 
 const HomePage: React.FC = () => {
     return(
-        <div>
-            <h1>Welcome to my Massage Booking System</h1>
-        </div>
+        <HeroBooking/>
     );
 };
 

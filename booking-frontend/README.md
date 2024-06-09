@@ -2,14 +2,17 @@
 [x] Create the React project
 [x] Install dependencies like axios and tailwind
 [] Design the main layour with the header
-[] Design booking form
-[] Display existing appointments
+[X] Design booking form
+[X] Display existing appointments
 [x] Connect frontend and backend
+[] Calendar and Booking System/ friendly UI
 [] Style the application
 [] Test and refine
 
-## PROCESS
-[] Trying to debug the problems, two of them are the appointments list and form
+### MILESTONES
+
+## BOOKING PAGE
+[] Booking
 
 
 ---------------
