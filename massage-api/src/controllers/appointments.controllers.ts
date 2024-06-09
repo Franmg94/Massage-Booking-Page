@@ -1,14 +1,13 @@
 import express, { Request, RequestHandler, Response } from 'express';
 import AppointmentModel from '../models/Appointment';
 
-
 // CREATE APPOINTMENT
 export const createAppointment: RequestHandler = async (req, res, next) => {
     try {
-        const { service, date, time, location, assistance, client } = req.body;
+        const { service, date, time, location, assistance, duration, client } = req.body;
 
         // Validate request body
-        if (!service || !date || !time || !location || !assistance || !client) {
+        if (!service || !date || !time || !location || !assistance || !duration || !client) {
             return res.status(400).json({ message: 'Missing required fields.' });
         }
 
@@ -19,6 +18,7 @@ export const createAppointment: RequestHandler = async (req, res, next) => {
             time,
             location,
             assistance,
+            duration,
             client
         });
 
@@ -26,7 +26,7 @@ export const createAppointment: RequestHandler = async (req, res, next) => {
         const savedAppointment = await newAppointment.save();
 
         // Send success response
-        res.status(201).json({ message: 'Appointment created successful', appointment: savedAppointment });
+        res.status(201).json({ message: 'Appointment created successfully', appointment: savedAppointment });
     } catch (error) {
         console.error('Error creating appointment:', error);
         res.status(500).json({ message: 'Internal server error' });
