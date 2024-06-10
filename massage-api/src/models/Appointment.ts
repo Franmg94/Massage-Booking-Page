@@ -13,20 +13,13 @@ enum Service {
 enum Assistance {
   Confirmed = "Confirmed",
   Missed = "Missed",
-  Waiting = "Waiting"
+  Waiting = "Waiting",
 }
 
 enum Location {
   CentroDelfino = "Centro Delfino",
-  MasseursAddress = "Masseur's Address",
-  ClientAddress = "Client Address"
-}
-
-enum Duration {
-  Thirty = "30",
-  FortyFive = "45",
-  Sixty = "60",
-  Ninety = "90"
+  MasseursAddress = "Weigandufer 26",
+  ClientAddress = "Client Address",
 }
 
 // Define Client Interface
@@ -46,7 +39,7 @@ interface Appointment extends Document {
   location: Location;
   assistance: Assistance;
   client: Client;
-  duration: Duration;
+  duration: number; 
 }
 
 // Define Appointment Schema
@@ -77,9 +70,15 @@ const appointmentSchema = new Schema<Appointment>(
       required: true,
     },
     duration: {
-      type: String,
-      enum: Object.values(Duration),
-      required: true
+      type: Number,
+      required: true,
+      validate: {
+        validator: function (v: number) {
+          return [30, 45, 60, 90].includes(v);
+        },
+        message: (props) =>
+          `${props.value} is not a valid duration! It should be 30, 45, 60, or 90 minutes.`,
+      },
     },
     client: {
       name: {
@@ -109,7 +108,7 @@ const appointmentSchema = new Schema<Appointment>(
         type: Number,
         validate: {
           validator: function (v: number) {
-            return /^\d{9}$/.test(v.toString());
+            return v === undefined || /^\d{9}$/.test(v.toString());
           },
           message: (props) =>
             `${props.value} is not a valid 9-digit USC Number!`,
