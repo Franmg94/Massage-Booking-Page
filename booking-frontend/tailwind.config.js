@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: false,
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -9,6 +11,7 @@ module.exports = {
         "light-green": "#c8e6c9",
         "medium-green": "#81c784",
         "earth-brown": "#8d6e63",
+        
       },
       textShadow: {
         default: "2px 2px 4px rgba(0, 0, 0, 0.5)",

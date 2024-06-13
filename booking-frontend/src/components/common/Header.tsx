@@ -4,9 +4,9 @@ const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="bg-medium-blue p-4">
+        <header className="fixed top-0 left-0 right-0  p-4 z-50">
             <div className="container mx-auto flex justify-between items-center">
-                <h1 className="text-white text-xl border border-200-white rounded-lg shadow-md p-1 ">Book Now</h1>
+                <a href="/" className="text-white text-xl p-1 text-shadow hover:text-light-green">HomePage</a>
                 <button
                     className="block lg:hidden text-white"
                     onClick={() => setIsOpen(!isOpen)}
@@ -33,17 +33,22 @@ const Header: React.FC = () => {
                 >
                     <ul className="lg:flex lg:space-x-4 text-white">
                         <li>
-                            <a href="#services" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green">
-                                Services
+                            <a href="/booking" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green text-shadow">
+                                Book Now
                             </a>
                         </li>
                         <li>
-                            <a href="#about-me" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green">
+                            <a href="#treatments" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green text-shadow">
+                                Treatments
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about-me" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green text-shadow">
                                 About me
                             </a>
                         </li>
                         <li>
-                            <a href="#contact" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green">
+                            <a href="#contact" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green text-shadow">
                                 Contact
                             </a>
                         </li>

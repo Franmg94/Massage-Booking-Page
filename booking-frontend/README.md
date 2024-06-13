@@ -1,65 +1,46 @@
-### NOTES FROM DEVELOPMENT
+### NOTES FOR DEVELOPMENT
 [x] Create the React project
 [x] Install dependencies like axios and tailwind
-[] Design the main layour with the header
 [X] Design booking form
 [X] Display existing appointments
 [x] Connect frontend and backend
-[] Calendar and Booking System/ friendly UI
+[x] Calendar and Booking System/ friendly UI
 [] Style the application
 [] Test and refine
 
-### MILESTONES
+### BOOKING FORM / PAGE
+I was working on the Booking form. 
+[x] Post request working.
+[x] Fix client address input.
+[X] Fix the available days.
+[x] The calendar and the time selection should be better displayed.
+[] Connect the available dates with the db (HARD) (+10h)
 
-## BOOKING PAGE
-[] Booking
+### HOME PAGE
+[x]Hero
+[x]Treatment section
+[x]About section
+[x]Contact section
+[] Style the sections (5-7 hours)
+
+
+
 
 
 ---------------
 
-# Getting Started with Create React App
+### MVP
+[x] All sections with informations on the HomePage. 
+[x] Booking Form Post Request.
+[] Admin Page with a private Page where I can see the list of appointments with all the information. (3h)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-Bonus
+[] Improve the Form component so the available dates read in the db with the already created appointments.(+10h)
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### REFERENCES
+https://www.remedymassage.com/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://colorlib.com/wp/massage-websites-design/
