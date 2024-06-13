@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.available-day {
+  @apply bg-green-400 rounded-sm text-white;
+}
+
+.unavailable-day {
+  @apply  text-gray-500;
+}
+
+/* Hide only navigation arrow buttons */
+.react-calendar__navigation button.react-calendar__navigation__arrow {
+  display: none;
+}
+
+/* Hide disabled tiles */
+.react-calendar__tile--disabled {
+  visibility: hidden;
+}
+
+/* Hover effect for calendar tiles */
+.react-calendar__tile {
+  @apply transition duration-300 ease-in-out;
+}
+
+.react-calendar__tile:hover {
+  @apply transform scale-90 rounded-full;
+}
+
+
+/* Add shadow box and rounded borders to calendar */
+.react-calendar {
+    @apply shadow-lg rounded-lg bg-white;
+  }
+  
+/* Remove underline from day names and style weekdays */
+.react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  /* Additional styling for navigation label */
+  .react-calendar__navigation__label {
+    @apply text-black ;
+  }
