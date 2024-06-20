@@ -2,7 +2,7 @@ import React from 'react';
 
 const PriceSection: React.FC = () => {
   return (
-    <section className="">
+    <section id='prices'>
       <div className="mx-20">        
         <div className="flex flex-col md:flex-row md:space-x-8 justify-around">
          

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import {  FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   return (
@@ -11,21 +11,25 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a href="/" className="hover:text-light-green">Home</a>
-            <a href="#services" className="hover:text-light-green">Services</a>
+            <a href="#treatments" className="hover:text-light-green">Treatments</a>
             <a href="#about-me" className="hover:text-light-green">About</a>
             <a href="#contact" className="hover:text-light-green">Contact</a>
           </div>
           <div className="flex space-x-4">
            
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-light-green">
+            <a href="https://instagram.com/tusymon" target="_blank" rel="noopener noreferrer" className="text-white hover:text-light-green">
               <FaInstagram size={24} />
+            </a>
+            <a href="https://www.linkedin.com/in/fran-martinez-dev/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-light-green">
+              <FaLinkedin size={24} />
+            </a>
+            <a href="https://github.com/Franmg94" target="_blank" rel="noopener noreferrer" className="text-white hover:text-light-green">
+              <FaGithub size={24} />
             </a>
            
           </div>
         </div>
-        <div className="mt-4 text-center">
-          <a href="mailto:your-email@example.com" className="hover:text-light-green">your-email@example.com</a>
-        </div>
+       
       </div>
     </footer>
   );

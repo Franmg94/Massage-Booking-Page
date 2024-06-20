@@ -4,9 +4,9 @@ const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 right-0  p-4 z-50">
+        <header className="w-full p-4 z-50 absolute top-0 left-0">
             <div className="container mx-auto flex justify-between items-center">
-                <a href="/" className="text-white text-xl p-1 text-shadow hover:text-light-green">HomePage</a>
+                <a href="/booking" className="text-white text-xl p-1 text-shadow hover:text-light-green">Book Now</a>
                 <button
                     className="block lg:hidden text-white"
                     onClick={() => setIsOpen(!isOpen)}
@@ -33,13 +33,13 @@ const Header: React.FC = () => {
                 >
                     <ul className="lg:flex lg:space-x-4 text-white">
                         <li>
-                            <a href="/booking" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green text-shadow">
-                                Book Now
+                            <a href="#treatments" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green text-shadow">
+                                Treatments
                             </a>
                         </li>
                         <li>
-                            <a href="#treatments" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green text-shadow">
-                                Treatments
+                            <a href="#prices" className="block lg:inline-block mt-2 lg:mt-0 hover:text-light-green text-shadow">
+                                Prices
                             </a>
                         </li>
                         <li>

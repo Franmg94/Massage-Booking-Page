@@ -1,7 +1,7 @@
 const ReserveSection: React.FC = () => {
 
     return(
-        <div className="mx-16 py-11 mb-11 flex flex-col items-center">
+        <section id="treatments" className="mx-16 py-11 mb-11 flex flex-col items-center">
           <h2 className="font-abril text-4xl mb-8 uppercase text-center">
             Every Massage is Different
           </h2>
@@ -15,7 +15,7 @@ const ReserveSection: React.FC = () => {
           >
             Reserve Now
           </button>
-        </div>
+        </section>
     );
 };
 

@@ -10,6 +10,7 @@ import { json } from 'body-parser';
 
 import authRoutes from './routes/auth.routes';
 import appointmentRoutes from './routes/appointments.routes';
+import messageRoutes from './routes/message.routes';
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(json());
 // 👇 Start handling routes here
 app.use('/auth', authRoutes);
 app.use('/appointments', appointmentRoutes);
+app.use('/messages', messageRoutes);
 
 // Error handling middleware
 import errorHandler from './error-handling/index';

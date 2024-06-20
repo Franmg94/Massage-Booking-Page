@@ -53,7 +53,7 @@ const TreatmentsSection: React.FC = () => {
   ];
 
   return (
-    <section id="treatments" className="py-10">
+    <section  className="py-10">
     <div className="container mx-auto p-5 max-w-screen-xl">
       {/* TREATMENTS */}
       <div className="">
