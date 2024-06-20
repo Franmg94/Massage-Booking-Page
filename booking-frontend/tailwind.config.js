@@ -13,6 +13,11 @@ module.exports = {
         "earth-brown": "#8d6e63",
         
       },
+      fontFamily: {
+        'abril': ['Abril Fatface', 'cursive'],
+        'heebo' : ['Heebo', 'sans-serif'],
+        'raleway': ['Raleway', 'sans-serif'],
+      },
       textShadow: {
         default: "2px 2px 4px rgba(0, 0, 0, 0.5)",
         md: "3px 3px 6px rgba(0, 0, 0, 0.5)",

@@ -22,10 +22,11 @@ const Hero: React.FC = () => {
     >
       <div className='flex items-center justify-center h-full bg-black bg-opacity-10'>
         <div className='text-center '>
-          <h1 className='text-4xl text-shadow-lg mb-4 text-slate-100'>
+          <h1 className='font-abril uppercase text-5xl text-shadow-lg mb-4 text-slate-100'>
             Body Treatments Berlin
           </h1>
-          <div className='flex justify-center space-x-4'>
+          {/* BUTTONS  */}
+          {/* <div className='flex justify-center space-x-4'>
             <button 
               onClick={() => window.location.href = '/booking'}
               className='text-white hover:text-light-green hover:text-shadow-md font-bold py-2 px-4 transform transition-transform duration-300 hover:scale-105'
@@ -38,7 +39,7 @@ const Hero: React.FC = () => {
             >
               Treatments
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

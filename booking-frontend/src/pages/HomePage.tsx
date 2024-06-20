@@ -4,12 +4,14 @@ import TreatmentsSection from "../components/homepage/TreatmentsSection";
 import AboutMeSection from "../components/homepage/AboutMe";
 import ContactSection from "../components/homepage/ContactSection";
 import PriceSection from "../components/homepage/PriceSection";
+import ReserveSection from "../components/homepage/ReserveSection";
 
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
+      <ReserveSection/>
       <TreatmentsSection />
       <PriceSection />
       <AboutMeSection/>
