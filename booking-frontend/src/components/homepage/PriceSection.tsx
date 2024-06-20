@@ -2,44 +2,40 @@ import React from 'react';
 
 const PriceSection: React.FC = () => {
   return (
-    <section className="bg-white py-12">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Pricing</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="p-6 bg-light-green bg-opacity-20 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">Wellness, Holistic, and Energy Work</h3>
-            <ul className="text-lg">
-              <li>30 min - 39€</li>
-              <li>45 min - 49€</li>
-              <li>60 min - 69€</li>
-              <li>90 min - 89€</li>
+    <section className="">
+      <div className="mx-20">        
+        <div className="flex flex-col md:flex-row md:space-x-8 justify-around">
+         
+          <div className="p-6 text-center">
+            <h3 className='text-lg mb-2 uppercase font-raleway'>Most modalities</h3>
+            <h2 className="text-3xl font-abril uppercase mb-10 ">Massages</h2>
+            <ul className="font-heebo leading-loose font-light">
+            <li className='mb-2'>30 min  - €39</li>
+              <li className='mb-2'>45 min  - €49</li>
+              <li className='mb-2'>60 min  - €69</li>
+              <li className='mb-2'>90 min  - €89</li>
             </ul>
           </div>
           
-          <div className="p-6 bg-light-green bg-opacity-20 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">Deep Tissue</h3>
-            <ul className="text-lg">
-              <li>45 min - 55€</li>
-              <li>60 min - 75€</li>
-              <li>90 min - 95€</li>
+          <div className="p-6 text-center">
+            <h3 className='text-lg mb-2 uppercase font-raleway'>Sport & Deep Tissue</h3>
+            <h2 className="text-3xl font-abril uppercase mb-10">Massages</h2>
+            <ul className=" font-heebo leading-loose font-light mb-2">
+            <li className='mb-2'>45 min - €55</li>
+              <li className='mb-2'>60 min - €75</li>
+              <li className='mb-2'>90 min - €95</li>
             </ul>
-          </div>
-          
-          <div className="p-6 bg-light-green bg-opacity-20 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">Urban Sports Club Members</h3>
-            <ul className="text-lg">
-              <li>25 min - *5€</li>
-            </ul>
-          </div>
-
-          <div className="p-6 bg-light-green bg-opacity-20 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-4">Class Pass Members</h3>
-            <p className="text-lg">
-              *Book through Class Pass App and send me an email to confirm appointment.
-            </p>
           </div>
         </div>
+      </div>
+      <div className='flex justify-center mt-10'>
+
+      <button
+            onClick={() => (window.location.href = "/booking")}
+            className="mx-auto mt-10 border-2 border-black tracking-wider font-bold uppercase py-5 px-8 hover:text-white hover:bg-black   transform transition-transform duration-300"
+          >
+            Reserve Now
+          </button>
       </div>
     </section>
   );
