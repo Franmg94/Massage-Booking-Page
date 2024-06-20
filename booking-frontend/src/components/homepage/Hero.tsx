@@ -25,21 +25,6 @@ const Hero: React.FC = () => {
           <h1 className='font-abril uppercase text-5xl text-shadow-lg mb-4 text-slate-100'>
             Body Treatments Berlin
           </h1>
-          {/* BUTTONS  */}
-          {/* <div className='flex justify-center space-x-4'>
-            <button 
-              onClick={() => window.location.href = '/booking'}
-              className='text-white hover:text-light-green hover:text-shadow-md font-bold py-2 px-4 transform transition-transform duration-300 hover:scale-105'
-            >
-              Book Now
-            </button>
-            <button
-              onClick={() => window.location.href = '#treatments'}
-              className=' text-white hover:text-light-green hover:text-shadow-md font-bold py-2 px-4 transform transition-transform duration-300 hover:scale-105'
-            >
-              Treatments
-            </button>
-          </div> */}
         </div>
       </div>
     </section>

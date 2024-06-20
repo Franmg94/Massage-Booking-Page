@@ -5,6 +5,7 @@ import AboutMeSection from "../components/homepage/AboutMe";
 import ContactSection from "../components/homepage/ContactSection";
 import PriceSection from "../components/homepage/PriceSection";
 import ReserveSection from "../components/homepage/ReserveSection";
+import Banner from "../components/homepage/Banner";
 
 
 const HomePage: React.FC = () => {
@@ -14,6 +15,7 @@ const HomePage: React.FC = () => {
       <ReserveSection/>
       <TreatmentsSection />
       <PriceSection />
+      <Banner/>
       <AboutMeSection/>
       <ContactSection/>
     </>
