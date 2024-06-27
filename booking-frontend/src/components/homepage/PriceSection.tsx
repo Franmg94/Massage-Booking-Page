@@ -1,6 +1,10 @@
 import React from 'react';
+import { useFormContext } from '../common/FormContext';
+
 
 const PriceSection: React.FC = () => {
+  const {toggleForm} = useFormContext();
+
   return (
     <section id='prices'>
       <div className="mx-20">        
@@ -31,7 +35,7 @@ const PriceSection: React.FC = () => {
       <div className='flex justify-center mt-10'>
 
       <button
-            onClick={() => (window.location.href = "/booking")}
+            onClick={toggleForm}
             className="mx-auto mt-10 border-2 border-black tracking-wider font-bold uppercase py-5 px-8 hover:text-white hover:bg-black   transform transition-transform duration-300"
           >
             Reserve Now

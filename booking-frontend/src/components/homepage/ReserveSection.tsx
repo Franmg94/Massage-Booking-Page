@@ -1,4 +1,9 @@
+import { useFormContext } from "../common/FormContext";
+
+
+
 const ReserveSection: React.FC = () => {
+  const {toggleForm} = useFormContext();
 
     return(
         <section id="treatments" className="mx-16 py-11 mb-11 flex flex-col items-center">
@@ -10,7 +15,7 @@ const ReserveSection: React.FC = () => {
             moment and in the context of your overall healing.
           </p>
           <button
-            onClick={() => (window.location.href = "/booking")}
+            onClick={toggleForm}
             className="mt-10 border-2 border-black tracking-wider font-bold uppercase py-5 px-8 hover:text-white hover:bg-black   transform transition-transform duration-300"
           >
             Reserve Now
