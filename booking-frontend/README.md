@@ -1,3 +1,9 @@
+Friday: 
+The form can successfully create a post request to the server. 
+Next steps, finishing the styling of the page.
+
+Well done! Keep it up :)
+
 ### NOTES FOR DEVELOPMENT
 [x] Create the React project
 [x] Install dependencies like axios and tailwind
@@ -14,6 +20,7 @@ I was working on the Booking form.
 [x] Fix client address input.
 [X] Fix the available days.
 [x] The calendar and the time selection should be better displayed.
+
 [] Connect the available dates with the db (HARD) (+10h)
 
 ### HOME PAGE

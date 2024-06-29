@@ -15,7 +15,7 @@ enum Service {
 
 enum Location {
   CentroDelfino = "Centro Delfino",
-  MasseursAddress = "Weigandufer 26",
+  MasseursAddress = "Neuköln",
   ClientAddress = "Client Address",
 }
 
@@ -117,15 +117,23 @@ const SlideBookingForm: React.FC = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post(
-        `${process.env.REACT_APP_SERVER_URL}/appointments`,
-        formData
-      );
-      alert("Appointment booked successfully!");
+      // Ensure the location matches the enum values
+      const formattedData = {
+        ...formData,
+        location: formData.location === "Neuköln" ? Location.MasseursAddress : formData.location,
+      };
+      
+      await axios.post(`${process.env.REACT_APP_SERVER_URL}/appointments`, formattedData);
+      alert('Appointment booked successfully!');
       toggleForm();
     } catch (error) {
-      console.error("There was an error booking the appointment:", error);
+      console.log(formData)
+      console.error('There was an error booking the appointment:', error);
     }
+  };
+
+  const isStep3Valid = () => {
+    return formData.date !== null && formData.time !== "";
   };
 
   const isStep4Valid = () => {
@@ -291,8 +299,14 @@ const SlideBookingForm: React.FC = () => {
               Back
             </button>
             <button
-              onClick={() => setStep(4)}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
+              onClick={() => {
+                if (isStep3Valid()) {
+                  setStep(4);
+                } else {
+                  alert("Please select both a date and a time.");
+                }
+              }}
+               className="bg-blue-500 text-white px-4 py-2 rounded"
             >
               Next
             </button>
@@ -374,33 +388,37 @@ const SlideBookingForm: React.FC = () => {
             </button>
           </div>
         );
-      case 5:
-        return (
-          <div>
-            <h2 className="text-2xl font-bold mb-4">Confirm Your Booking</h2>
-            <p>Service: {formData.service}</p>
-            <p>Location: {formData.location}</p>
-            <p>Date: {formData.date?.toLocaleDateString()}</p>
-            <p>Time: {formData.time}</p>
-            <p>Name: {formData.client.name}</p>
-            <p>Email: {formData.client.email}</p>
-            <p>Phone: {formData.client.phone}</p>
-            <p>Address: {formData.client.address}</p>
-            <p>USC Number: {formData.client.uscNumber}</p>
-            <button
-              onClick={() => setStep(4)}
-              className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
-            >
-              Back
-            </button>
-            <button
-              onClick={handleSubmit}
-              className="bg-green-500 text-white px-4 py-2 rounded"
-            >
-              Confirm
-            </button>
-          </div>
-        );
+        case 5:
+          return (
+            <div>
+              <h2 className="text-2xl font-bold mb-4">Confirm Your Booking</h2>
+              <p>Service: {formData.service}</p>
+              <p>Location: {formData.location}</p>
+              <p>Date: {formData.date?.toLocaleDateString()}</p>
+              <p>Time: {formData.time}</p>
+              <p>Name: {formData.client.name}</p>
+              <p>Email: {formData.client.email}</p>
+              <p>Phone: {formData.client.phone}</p>
+              {formData.location === Location.ClientAddress && (
+                <p>Address: {formData.client.address}</p>
+              )}
+              {formData.service === Service.USC && (
+                <p>USC Number: {formData.client.uscNumber}</p>
+              )}
+              <button
+                onClick={() => setStep(4)}
+                className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
+              >
+                Back
+              </button>
+              <button
+                onClick={handleSubmit}
+                className="bg-green-500 text-white px-4 py-2 rounded"
+              >
+                Confirm
+              </button>
+            </div>
+          );
       default:
         return null;
     }

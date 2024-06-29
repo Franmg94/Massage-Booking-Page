@@ -10,16 +10,12 @@ enum Service {
   ClassPass = "Class Pass"
 }
 
-enum Assistance {
-  Confirmed = "Confirmed",
-  Missed = "Missed",
-  Waiting = "Waiting",
-}
 
 enum Location {
   CentroDelfino = "Centro Delfino",
   MasseursAddress = "Weigandufer 26",
   ClientAddress = "Client Address",
+  Neukoln = "Neuköln" 
 }
 
 // Define Client Interface
@@ -28,7 +24,7 @@ interface Client {
   email: string;
   phone: string;
   address?: string;
-  uscNumber?: number;
+  uscNumber?: number | null;
 }
 
 // Define Appointment Interface extending Mongoose Document
@@ -37,7 +33,6 @@ interface Appointment extends Document {
   date: Date;
   time: string;
   location: Location;
-  assistance: Assistance;
   client: Client;
   duration: number; 
 }
@@ -61,12 +56,6 @@ const appointmentSchema = new Schema<Appointment>(
     location: {
       type: String,
       enum: Object.values(Location),
-      required: true,
-    },
-    assistance: {
-      type: String,
-      enum: Object.values(Assistance),
-      default: Assistance.Waiting,
       required: true,
     },
     duration: {
@@ -103,17 +92,20 @@ const appointmentSchema = new Schema<Appointment>(
       },
       address: {
         type: String,
+        required: false,
       },
       uscNumber: {
         type: Number,
+        required: false, // explicitly make it optional
         validate: {
           validator: function (v: number) {
-            return v === undefined || /^\d{9}$/.test(v.toString());
+            return v === undefined || v === null || /^\d{9}$/.test(v.toString());
           },
           message: (props) =>
             `${props.value} is not a valid 9-digit USC Number!`,
         },
       },
+      
     },
   },
   {
