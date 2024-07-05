@@ -5,14 +5,15 @@ import Footer from "./components/common/Footer";
 import HomePage from "./pages/HomePage";
 import BookingPage from "./pages/BookingPage";
 import { FormProvider } from "./components/common/FormContext";
-import SlideBookingForm from "./components/common/SlideBookingForm";
+import SlideBookingForm from "./components/homepage/SlideBookingForm";
+
 
 
 const App: React.FC = () => {
   return (
     <Router>
-      <Header />
       <FormProvider>
+      <Header />
       <SlideBookingForm/>
       <main className="">
         <Routes>
