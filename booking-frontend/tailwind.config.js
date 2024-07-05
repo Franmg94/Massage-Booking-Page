@@ -38,6 +38,30 @@ module.exports = {
           ".text-shadow-lg": {
             "text-shadow": "4px 4px 8px rgba(0, 0, 0, 0.5)",
           },
+
+          // SLIDING FORM
+
+          '.title-form': {
+            '@apply text-2xl font-semibold mb-4 tracking-wider font-abril': {},
+          },
+          '.button-form--base': {
+            '@apply p-2 w-full text-left font-raleway block text-lg': {},
+          },
+          '.button-form--hover': {
+            '@apply hover:bg-slate-200 hover:text-black': {},
+          },
+          '.button-form--selected': {
+            '@apply bg-black text-white': {},
+          },
+          '.button-form--unselected': {
+            '@apply bg-white text-black': {},
+          },
+          '.paragraph-form': {
+            '@apply text-sm mt-2 font-heebo': {},
+          },
+          '.next-button': {
+            '@apply border-2 border-black tracking-wider uppercase py-1 px-2 hover:text-white hover:bg-black transform transition-transform duration-300': {},
+          }
         },
         ["responsive", "hover"]
       );

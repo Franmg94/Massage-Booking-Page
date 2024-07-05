@@ -120,15 +120,21 @@ const SlideBookingForm: React.FC = () => {
       // Ensure the location matches the enum values
       const formattedData = {
         ...formData,
-        location: formData.location === "Neuköln" ? Location.MasseursAddress : formData.location,
+        location:
+          formData.location === "Neuköln"
+            ? Location.MasseursAddress
+            : formData.location,
       };
-      
-      await axios.post(`${process.env.REACT_APP_SERVER_URL}/appointments`, formattedData);
-      alert('Appointment booked successfully!');
+
+      await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/appointments`,
+        formattedData
+      );
+      alert("Appointment booked successfully!");
       toggleForm();
     } catch (error) {
-      console.log(formData)
-      console.error('There was an error booking the appointment:', error);
+      console.log(formData);
+      console.error("There was an error booking the appointment:", error);
     }
   };
 
@@ -168,23 +174,23 @@ const SlideBookingForm: React.FC = () => {
       case 1:
         return (
           <div>
-            <h2 className="text-2xl font-bold mb-4">Select Location</h2>
-            <div>
+            <h2 className="title-form">Select Location</h2>
+            <div className="flex flex-col">
               {Object.values(Location).map((location) => (
-                <div key={location}>
+                <div key={location} className="my-5">
                   <button
-                    className={`p-4 w-full text-left border rounded ${
+                    className={`button-form--base ${
                       formData.location === location
-                        ? "bg-blue-500 text-white"
-                        : "bg-white text-black"
-                    }`}
+                        ? "button-form--selected"
+                        : "button-form--unselected"
+                    } button-form--hover`}
                     onClick={() =>
                       setFormData((prev) => ({ ...prev, location }))
                     }
                   >
                     {location}
                   </button>
-                  <p>
+                  <p className="paragraph-form">
                     {location === Location.CentroDelfino &&
                       "Only on Tuesdays. You will be redirected to Centro Delfino Website."}
                     {location === Location.MasseursAddress &&
@@ -196,44 +202,46 @@ const SlideBookingForm: React.FC = () => {
               ))}
             </div>
 
-            <button
-              onClick={() => {
-                if (formData.location === Location.CentroDelfino) {
-                  window.open(
-                    "https://schoeneberg.centro-delfino.com/online-buchung/",
-                    "_blank"
-                  );
-                } else {
-                  setStep(2);
-                }
-              }}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
-              Next
-            </button>
+            <div className="flex justify-end mt-10">
+              <button
+                onClick={() => {
+                  if (formData.location === Location.CentroDelfino) {
+                    window.open(
+                      "https://schoeneberg.centro-delfino.com/online-buchung/",
+                      "_blank"
+                    );
+                  } else {
+                    setStep(2);
+                  }
+                }}
+                className="next-button"
+              >
+                Next
+              </button>
+            </div>
           </div>
         );
 
       case 2:
         return (
           <div>
-            <h2 className="text-2xl font-bold mb-4">Select Service</h2>
+            <h2 className="title-form">Select Service</h2>
             <div className="mb-4">
               {Object.values(Service).map((service) => (
                 <div key={service} className="mb-2">
                   <button
-                    className={`p-2 w-full text-left border rounded ${
+                    className={`button-form--base  ${
                       formData.service === service
-                        ? "bg-blue-500 text-white"
-                        : "bg-white text-black"
-                    }`}
+                        ? "button-form--selected"
+                        : "button-form--unselected"
+                    } button-form--hover`}
                     onClick={() =>
                       setFormData((prev) => ({ ...prev, service }))
                     }
                   >
                     {service}
                   </button>
-                  <p className="text-xs text-gray-600 mt-1">
+                  {/* <p className="paragraph-form">
                     {service === Service.Wellness &&
                       "A relaxing wellness massage."}
                     {service === Service.DeepTissue &&
@@ -246,28 +254,24 @@ const SlideBookingForm: React.FC = () => {
                       "Urban Sports Club membership service."}
                     {service === Service.ClassPass &&
                       "ClassPass membership service."}
-                  </p>
+                  </p> */}
                 </div>
               ))}
             </div>
-            <button
-              onClick={() => setStep(1)}
-              className="bg-gray-500 text-white px-3 py-1 rounded mr-2"
-            >
-              Back
-            </button>
-            <button
-              onClick={() => setStep(3)}
-              className="bg-blue-500 text-white px-3 py-1 rounded"
-            >
-              Next
-            </button>
+            <div className="flex justify-between">
+              <button onClick={() => setStep(1)} className="next-button">
+                Back
+              </button>
+              <button onClick={() => setStep(3)} className="next-button">
+                Next
+              </button>
+            </div>
           </div>
         );
       case 3:
         return (
           <div>
-            <h2 className="text-2xl font-bold mb-4">Select Date and Time</h2>
+            <h2 className="title-form">Select Date and Time</h2>
             <DatePicker
               selected={formData.date}
               onChange={handleDateChange}
@@ -292,30 +296,30 @@ const SlideBookingForm: React.FC = () => {
                 </option>
               ))}
             </select>
-            <button
-              onClick={() => setStep(2)}
-              className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
-            >
-              Back
-            </button>
-            <button
-              onClick={() => {
-                if (isStep3Valid()) {
-                  setStep(4);
-                } else {
-                  alert("Please select both a date and a time.");
-                }
-              }}
-               className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
-              Next
-            </button>
+
+            <div className="flex justify-between">
+              <button onClick={() => setStep(2)} className="next-button">
+                Back
+              </button>
+              <button
+                onClick={() => {
+                  if (isStep3Valid()) {
+                    setStep(4);
+                  } else {
+                    alert("Please select both a date and a time.");
+                  }
+                }}
+                className="next-button"
+              >
+                Next
+              </button>
+            </div>
           </div>
         );
       case 4:
         return (
           <div>
-            <h2 className="text-2xl font-bold mb-4">Enter Your Details</h2>
+            <h2 className="title-form">Enter Your Details</h2>
             <input
               type="text"
               name="name"
@@ -368,57 +372,70 @@ const SlideBookingForm: React.FC = () => {
                 pattern="\d{9}"
               />
             )}
-            <button
-              onClick={() => setStep(3)}
-              className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
-            >
-              Back
-            </button>
-            <button
-              onClick={() => {
-                if (isStep4Valid()) {
-                  setStep(5);
-                } else {
-                  alert("Please fill out all required fields correctly.");
-                }
-              }}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
-              Next
-            </button>
-          </div>
-        );
-        case 5:
-          return (
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Confirm Your Booking</h2>
-              <p>Service: {formData.service}</p>
-              <p>Location: {formData.location}</p>
-              <p>Date: {formData.date?.toLocaleDateString()}</p>
-              <p>Time: {formData.time}</p>
-              <p>Name: {formData.client.name}</p>
-              <p>Email: {formData.client.email}</p>
-              <p>Phone: {formData.client.phone}</p>
-              {formData.location === Location.ClientAddress && (
-                <p>Address: {formData.client.address}</p>
-              )}
-              {formData.service === Service.USC && (
-                <p>USC Number: {formData.client.uscNumber}</p>
-              )}
-              <button
-                onClick={() => setStep(4)}
-                className="bg-gray-500 text-white px-4 py-2 rounded mr-2"
-              >
+            <div className="flex justify-between">
+              <button onClick={() => setStep(3)} className="next-button">
                 Back
               </button>
               <button
-                onClick={handleSubmit}
-                className="bg-green-500 text-white px-4 py-2 rounded"
+                onClick={() => {
+                  if (isStep4Valid()) {
+                    setStep(5);
+                  } else {
+                    alert("Please fill out all required fields correctly.");
+                  }
+                }}
+                className="next-button"
               >
+                Next
+              </button>
+            </div>
+          </div>
+        );
+      case 5:
+        return (
+          <div className="flex flex-col items-center justify-between w-full">
+            <h2 className="title-form">Confirm Your Booking</h2>
+            <p className="paragraph-form">
+              <strong>Service:</strong> {formData.service}
+            </p>
+            <p className="paragraph-form">
+              <strong>Location:</strong> {formData.location}
+            </p>
+            <p className="paragraph-form">
+              <strong>Date:</strong> {formData.date?.toLocaleDateString()}
+            </p>
+            <p className="paragraph-form">
+              <strong>Time:</strong> {formData.time}
+            </p>
+            <p className="paragraph-form">
+              <strong>Name:</strong> {formData.client.name}
+            </p>
+            <p className="paragraph-form">
+              <strong>Email:</strong> {formData.client.email}
+            </p>
+            <p className="paragraph-form">
+              <strong>Phone:</strong> {formData.client.phone}
+            </p>
+            {formData.location === Location.ClientAddress && (
+              <p className="paragraph-form">
+                <strong>Address:</strong> {formData.client.address}
+              </p>
+            )}
+            {formData.service === Service.USC && (
+              <p className="paragraph-form">
+                <strong>USC Number:</strong> {formData.client.uscNumber}
+              </p>
+            )}
+            <div className="flex justify-between w-full mt-5">
+              <button onClick={() => setStep(4)} className="next-button">
+                Back
+              </button>
+              <button onClick={handleSubmit} className="next-button">
                 Confirm
               </button>
             </div>
-          );
+          </div>
+        );
       default:
         return null;
     }
