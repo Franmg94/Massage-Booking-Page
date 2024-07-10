@@ -29,10 +29,14 @@ I'm using ChatGPT as an AI helper to consciously leverage this powerful tool in 
 
 ## Current Status
 
-- **Completed**: Basic project setup, initial pages for types of massages, prices, about me, and contact.
-- **In Progress**: Implementation of the booking form that slides in from the side when the "Reserve" button is clicked.
+- **Completed**:
+  - Basic project setup
+  - Information pages for massages, prices, about me, and contact
+  - Slide-in booking form that sends a post request to the server
 
-## How to Run the Project
+- **In Progress**:
+  - Enhancements to the booking form and date picker
+  - Creation of an admin page for viewing all bookings with login functionality
 
 ### Prerequisites
 

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import HomePage from "./pages/HomePage";
-import BookingPage from "./pages/BookingPage";
 import { FormProvider } from "./components/common/FormContext";
 import SlideBookingForm from "./components/homepage/SlideBookingForm";
 
@@ -18,7 +17,6 @@ const App: React.FC = () => {
       <main className="">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/booking" element={<BookingPage />} />
         </Routes>
       </main>
       </FormProvider> 

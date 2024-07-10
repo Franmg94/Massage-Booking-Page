@@ -1,10 +1,10 @@
 import React from 'react';
-import profileImage from '../../assets/images/profile-2.jpg';  
+import profileImage from '../../assets/images/profile.jpg';  
 
 const AboutMeSection: React.FC = () => {
   return (
     <section id='about-me' className="bg-white p-12">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div className="container mx-auto px-4 flex flex-col-reverse gap-7 md:flex-row items-center">
         <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
           <div className="relative w-64 h-64 custom-rotate-shadow">
             <img src={profileImage} alt="Profile" className="w-full h-full object-cover rounded-lg" />

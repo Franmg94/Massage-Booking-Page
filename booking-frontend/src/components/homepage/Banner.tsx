@@ -15,12 +15,12 @@ const Banner: React.FC = () => {
 
   return (
     <section
-      className="relative h-screen w-screen my-20"
+      className="relative h-screen w-screen my-20 bg-cover bg-center"
       style={{ 
         backgroundImage: `url(${backgroundImage})`,
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
-        backgroundPosition: `center ${-offsetY * 0.2}px` 
+        backgroundPosition: `center ${-offsetY * 0.1}px` 
     }}
     >
       <div className='flex items-center justify-center h-full bg-black bg-opacity-10'>

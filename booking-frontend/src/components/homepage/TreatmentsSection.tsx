@@ -17,7 +17,7 @@ const TreatmentsSection: React.FC = () => {
     },
     {
       value: "Holistic Massage",
-      subTitle: "FOCUS ON CUSTOM MEDICAL OUTCOMES",
+      subTitle: "A harmonious blend of soul, mind, and body",
       description:
         "A holistic approach to massage that addresses the whole person – mind, body, and spirit. This treatment aims to balance your energies and promote natural healing through various techniques tailored to your needs.",
       modelImg: treatment2,
@@ -38,16 +38,16 @@ const TreatmentsSection: React.FC = () => {
     },
     {
       value: "Urban Sports Club Massage",
-      subTitle: "Ease tension with light, rhymic strokes",
+      subTitle: "For clients with L suscription",
       description:
-        "Specialized massage treatments for Urban Sports Club members. Whether you're recovering from a workout or looking to maintain peak performance, this treatment is designed to meet the needs of active individuals.",
+        "Specialized massage treatments for Urban Sports Club members. 25 min session with the option to extend paying a small amount.",
       modelImg: treatment5,
     },
     {
       value: "Class Pass Massage",
-      subTitle: "Ease tension with light, rhymic strokes",
+      subTitle: "For clients of Class Pass",
       description:
-        "Exclusive massage services for ClassPass members. Enjoy tailored treatments that help you relax and recover, ensuring you get the most out of your fitness routine.",
+        "Exclusive massage services for ClassPass members. Please check in before through your app.",
       modelImg: treatment6,
     },
   ];
