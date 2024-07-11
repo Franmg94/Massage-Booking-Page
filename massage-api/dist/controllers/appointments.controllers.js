@@ -17,9 +17,9 @@ const Appointment_1 = __importDefault(require("../models/Appointment"));
 // CREATE APPOINTMENT
 const createAppointment = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { service, date, time, location, assistance, client } = req.body;
+        const { service, date, time, location, duration, client } = req.body;
         // Validate request body
-        if (!service || !date || !time || !location || !assistance || !client) {
+        if (!service || !date || !time || !location || !duration || !client) {
             return res.status(400).json({ message: 'Missing required fields.' });
         }
         // Create a new appointment instance
@@ -28,13 +28,13 @@ const createAppointment = (req, res, next) => __awaiter(void 0, void 0, void 0, 
             date,
             time,
             location,
-            assistance,
+            duration,
             client
         });
         // Save the appointment to the database
         const savedAppointment = yield newAppointment.save();
         // Send success response
-        res.status(201).json({ message: 'Appointment created successful', appointment: savedAppointment });
+        res.status(201).json({ message: 'Appointment created successfully', appointment: savedAppointment });
     }
     catch (error) {
         console.error('Error creating appointment:', error);

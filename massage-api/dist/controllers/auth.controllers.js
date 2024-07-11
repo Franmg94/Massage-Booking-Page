@@ -12,11 +12,39 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.verify = exports.login = void 0;
+exports.verify = exports.login = exports.signup = void 0;
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const Admin_1 = __importDefault(require("../models/Admin"));
 const SECRET_KEY = process.env.SECRET_KEY || 'your_jwt_secret_key';
+const signup = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).json({ error: 'Email and password are required.' });
+    }
+    try {
+        // Check if the admin already exists
+        const existingAdmin = yield Admin_1.default.findOne({ email });
+        if (existingAdmin) {
+            return res.status(400).json({ error: 'Admin already exists.' });
+        }
+        // Hash the password
+        const salt = yield bcryptjs_1.default.genSalt(10);
+        const hashedPassword = yield bcryptjs_1.default.hash(password, salt);
+        // Create a new admin
+        const newAdmin = new Admin_1.default({
+            email,
+            password: hashedPassword,
+        });
+        yield newAdmin.save();
+        res.status(201).json({ message: 'Admin created successfully' });
+    }
+    catch (error) {
+        console.error('Error signing up admin:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+exports.signup = signup;
 const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { email, password } = req.body;
     if (!email || !password) {
