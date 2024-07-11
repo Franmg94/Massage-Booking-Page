@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // ℹ️ Connects to the database
-import "../src/db/index";
+import "./db/index";
 
 // Handles HTTP requests (express is node js framework)
 import express from 'express';

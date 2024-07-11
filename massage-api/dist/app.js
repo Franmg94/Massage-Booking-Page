@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 // ℹ️ Connects to the database
-require("../src/db/index");
+require("./db/index");
 // Handles HTTP requests (express is node js framework)
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = require("body-parser");
